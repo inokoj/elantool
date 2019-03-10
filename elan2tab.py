@@ -69,7 +69,7 @@ for child in list(root):
 			
 			# コメントアウトがあった場合の対策
 			if "%" in text:
-			text = text.split("%")[0].strip()
+				text = text.split("%")[0].strip()
 			
 			tier_data.append([tier_id, start_sec, end_sec, text])
 

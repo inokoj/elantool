@@ -71,6 +71,10 @@ for line in lines:
 	end_mill = int(end_sec * 1000) # ミリ秒にする
 	annotation = d[3].rstrip()
 
+	# コメントアウトがあった場合の対策
+	if "%" in annotation:
+		annotation = annotation.split("%")[0].strip()
+
 	time_data.append([time_index, start_mill])
 	start_mill_index = time_index
 	time_index += 1

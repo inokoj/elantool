@@ -128,6 +128,7 @@ for line in lines:
 		# コメントアウトがあった場合の対策
 		if "%" in line:
 			line = line.split("%")[0].strip()
+		
 		text_list.append(line)
 
 # Store the data of the last IPU
