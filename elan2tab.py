@@ -67,6 +67,10 @@ for child in list(root):
 			if args.tiername_output != 'none':
 				tier_id = args.tiername_output
 			
+			# コメントアウトがあった場合の対策
+			if "%" in text:
+			text = text.split("%")[0].strip()
+			
 			tier_data.append([tier_id, start_sec, end_sec, text])
 
 # Tab区切りで出力
