@@ -69,7 +69,19 @@ for child in list(root):
 			
 			# コメントアウトがあった場合の対策
 			if "%" in text:
-				text = text.split("%")[0].strip()
+				# %のあとのスペース対策
+				for idx in range(10):
+					text = text.replace('% ', '%')
+				
+				# 文節単位で区切る
+				data_splited = []
+				for t in text.split(' '):
+					if t.startswith('%'):
+						continue
+					data_splited.append(t)
+				
+				#text = text.split("%")[0].strip()
+				text = ' '.join(data_splited)
 			
 			tier_data.append([tier_id, start_sec, end_sec, text])
 
